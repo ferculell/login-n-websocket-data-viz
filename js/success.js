@@ -5,7 +5,7 @@ if (!sessionStorage.getItem('authorizedUser')) {
         <div class="col s12 m8 l6 offset-m2 offset-l3">
             <div class="card-panel blue-grey darken-3 center-align z-depth-3">
                 <div id="image-logo">
-                    <img class="responsive-img" src="images/ortex-logo-v.webp" alt="Ortex Logo">
+                    <img class="responsive-img" src="images/logo-1.png" alt="Acme Logo">
                 </div>
                 <div class="row section grey-text text-lighten-2">
                     <div class="input-field col s12">
@@ -26,7 +26,7 @@ if (!sessionStorage.getItem('authorizedUser')) {
     const rate = document.querySelector('#rate');
     const time = document.querySelector('#time');
     const mySocket = new WebSocket('ws://stream.tradingeconomics.com/?client=guest:guest');
-    console.log(mySocket);
+
     let dataArray = [];
     const options = {
         chart: {
@@ -97,6 +97,7 @@ if (!sessionStorage.getItem('authorizedUser')) {
 
     mySocket.onmessage = (event) => {
         let data = JSON.parse(event.data);
+        console.log(data);
         if (data.dt) {
             let date = new Date(data.dt);
             rate.innerHTML = `<h4>${data.price}</h4>`;
