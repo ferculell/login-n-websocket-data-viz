@@ -97,7 +97,7 @@ if (!sessionStorage.getItem('authorizedUser')) {
 
     mySocket.onmessage = (event) => {
         let data = JSON.parse(event.data);
-        console.log(data);
+        
         if (data.dt) {
             let date = new Date(data.dt);
             rate.innerHTML = `<h4>${data.price}</h4>`;
