@@ -25,7 +25,7 @@ if (!sessionStorage.getItem('authorizedUser')) {
 
     const rate = document.querySelector('#rate');
     const time = document.querySelector('#time');
-    const mySocket = new WebSocket('ws://stream.tradingeconomics.com/?client=guest:guest');
+    const mySocket = new WebSocket('wss://stream.tradingeconomics.com/?client=guest:guest');
 
     let dataArray = [];
     const options = {
